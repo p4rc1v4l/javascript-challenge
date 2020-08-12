@@ -8,6 +8,11 @@ var form = d3.select("#jsc-form");
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
+ufoReports.map(report => {
+    let tableRow = tbody.append('tr');
+    Object.values(report).forEach(reportDetail => tableRow.append('td').text(reportDetail));
+});
+
 function runEnter() {
     d3.event.preventDefault();
 
